@@ -1,0 +1,238 @@
+.data
+.text
+
+#print: cycles 170 & 350 and final state
+
+main:
+
+	ori $v0, $zero, 0x16
+	ori $v1, $zero, 0x21
+	ori $a0, $zero, 0x32
+	ori $a1, $zero, 0x46
+	ori $a2, $zero, 0x54
+	ori $a3, $zero, 0x66
+	ori $t0, $zero, 0x7
+	ori $t1, $zero, 0x8
+	ori $t2, $zero, 0x9
+	ori $t3, $zero, 0xa
+	ori $t4, $zero, 0xb
+	ori $t5, $zero, 0xc
+	ori $t6, $zero, 0xd
+	ori $t7, $zero, 0xe
+	ori $s0, $zero, 0xf
+	ori $s1, $zero, 0x10
+	ori $s2, $zero, 0x11
+	ori $s3, $zero, 0x12
+	ori $s4, $zero, 0x13
+	ori $s5, $zero, 0x14
+	ori $s6, $zero, 0x15
+	ori $s7, $zero, 0x16
+	ori $t8, $zero, 0x17
+	ori $t9, $zero, 0x18
+	ori $k0, $zero, 0x19
+	ori $k1, $zero, 0x1a
+	addi $ra, $zero, -1
+	
+	
+	ori $s0, $zero , 0x1 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 0($gp)
+	
+	ori $s0, $zero , 0x100 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 4($gp)
+	
+	ori $s0, $zero , 0x2 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 8($gp)
+	
+	ori $s0, $zero , 0x1000 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 12($gp)
+	
+	ori $s0, $zero , 0x23 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 16($gp)
+	
+	ori $s0, $zero , 0x27 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 20($gp)
+	
+	ori $s0, $zero , 0x62 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 24($gp)
+	
+	ori $s0, $zero , 0x37 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 28($gp)
+	
+	ori $s0, $zero , 0x40 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 32($gp)
+	
+	ori $s0, $zero , 0x73 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 36($gp)
+	
+	ori $s0, $zero , 0x47 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 40($gp)
+	
+	ori $s0, $zero , 0x52 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 44($gp)
+	
+	ori $s0, $zero , 0x66 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 48($gp)
+	
+	ori $s0, $zero , 0x59 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 52($gp)
+	
+	ori $s0, $zero , 0x32 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 56($gp)
+	
+	ori $s0, $zero , 0x56 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 60($gp)
+	
+	ori $s0, $zero , 0x68 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 64($gp)
+	
+	ori $s0, $zero , 0x70 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 68($gp)
+	
+	ori $s0, $zero , 0x45 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 72($gp)
+	
+	ori $s0, $zero , 0x81 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 76($gp)
+	
+	ori $s0, $zero , 0x74 #random comments
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	sw $s0, 80($gp)
+	
+	or $s0, $zero , $gp #random comments
+
+	
+	ori $s5, $zero, 0x15
+
+	ori $s1, $zero ,0xFFFF
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	sll $s1, $s1, 16
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	ori $s1, $s1,0xFFFF
+	
+	or $s2, $zero, $gp #first pointer
+	or $s3, $zero, $gp #last pointer
+	
+	addi $zero, $zero, 0
+	addi $s2, $s2, -4
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+outer_loop:
+	addi $s2, $s2, 4
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	and $s3, $s1, $s2
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	addi $s3, $s3, 4
+	
+	and $s4, $s5, $s1
+	addi $zero, $zero, 0
+	
+	addi $s5, $s5, -1
+	addi $s4, $s4, -1
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	beq $s5, $zero, end
+	addi $zero, $zero, 0
+	
+	
+inner_loop:
+
+	lw $t0, 0($s2)
+	lw $t1, 0($s3)
+	
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	slt $t3, $t0, $t1
+	
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	beq $t3, $zero, outer_less
+	addi $zero, $zero, 0
+	
+	addi $s3, $s3, 0x4
+	addi $s4, $s4, -1
+	
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	beq $s4, $zero, outer_loop 
+	addi $zero, $zero, 0
+	
+	beq $zero, $zero, inner_loop
+	addi $zero, $zero, 0
+	
+	
+outer_less:
+	
+	sw $t1, 0($s2)
+	sw $t0, 0($s3)
+	
+	addi $s3, $s3, 0x4
+	addi $s4, $s4, -1
+	
+	addi $zero, $zero, 0
+	addi $zero, $zero, 0
+	
+	beq $s4, $zero, outer_loop 
+	addi $zero, $zero, 0
+	
+	beq $zero, $zero, inner_loop
+	addi $zero, $zero, 0
+	
+	
+end:	
+	sll $zero, $zero, 0			#THIS IS MANDATORY

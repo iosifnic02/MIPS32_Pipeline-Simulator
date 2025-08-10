@@ -1,0 +1,42 @@
+Name: Iosif Nicolaou
+ID: UC10xxxxx
+
+-----Cycle 170-----
+Registers: 
+258	0	0	16	21	32	46	54	66	1	2	9	1	b	c	d	e	10008000	ffffffff	10008000	10008008	13	14	15	16	17	18	19	1a	10008000	7ffffffc	0	ffffffff	
+
+Monitors:
+25c	258	beq $t3, $zero, outer_less	-	$zero	-	$t3	1	0	-	0	$zero	$zero	$zero	-	0	0	0	-	-	-	-	0	$zero	$t3	1	
+
+Memory State:
+1	100	2	1000	23	27	62	37	40	73	47	52	66	59	32	56	68	70	45	81	74
+
+Pipeline Stages:
+beq $t3, $zero, outer_less	addi $zero, $zero, 0	addi $zero, $zero, 0	addi $zero, $zero, 0	slt $t3, $t0, $t1
+
+-----Cycle 350-----
+Registers: 
+27c	0	0	16	21	32	46	54	66	1	52	9	1	b	c	d	e	10008000	ffffffff	10008000	10008030	9	14	15	16	17	18	19	1a	10008000	7ffffffc	0	ffffffff	
+
+Monitors:
+inner_loop	27c	addi $zero, $zero, 0	inner_loop	$zero	$zero	$zero	0	0	0	-	$zero	$zero	$zero	-	0	0	0	-	-	-	-	-	-	$zero	0	
+
+Memory State:
+1	100	2	1000	23	27	62	37	40	73	47	52	66	59	32	56	68	70	45	81	74
+
+Pipeline Stages:
+addi $zero, $zero, 0	beq $zero, $zero, inner_loop	addi $zero, $zero, 0	beq $s4, $zero, outer_loop	addi $zero, $zero, 0
+
+-----Final State-----
+Registers:
+2a8	0	0	16	21	32	46	54	66	1000	100	9	0	b	c	d	e	10008000	ffffffff	10008050	10008054	0	0	15	16	17	18	19	1a	10008000	7ffffffc	0	ffffffff	
+
+Memory State:
+1	2	23	27	32	37	40	45	47	52	56	59	62	66	68	70	73	74	81	100	1000
+
+Total Cycles:
+4534
+
+Total Execution Time:
+4.7e+07ns
+
